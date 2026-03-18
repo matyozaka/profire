@@ -1,1 +1,109 @@
-中村
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>なかむらの自己紹介</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+      background: linear-gradient(to bottom, #e0f7ff, #ffffff);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #b3e5fc;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+
+    .content {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>❄ なかむらの自己紹介 ❄</h1>
+  <p>ようこそ！</p>
+</header>
+
+<div class="content">
+  <div class="card">
+    <h2>名前</h2>
+    <p>なかむら</p>
+  </div>
+
+  <div class="card">
+    <h2>趣味</h2>
+    <p>ゲーム / 音楽 / いろいろ</p>
+  </div>
+
+  <div class="card">
+    <h2>ひとこと</h2>
+    <p>よろしくお願いします！</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 なかむら</p>
+</footer>
+
+<script>
+  function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄';
+
+    snowflake.style.left = Math.random() * window.innerWidth + 'px';
+    snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    snowflake.style.opacity = Math.random();
+
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, 5000);
+  }
+
+  setInterval(createSnowflake, 200);
+</script>
+
+</body>
+</html>
